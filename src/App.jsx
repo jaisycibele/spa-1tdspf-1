@@ -1,7 +1,6 @@
 import Cabecalho from "./components/Cabecalho";
-import Conteudo from "./components/Conteudo";
 import Rodape from "./components/Rodape";
-import viteLogo from "./assets/vite.svg";
+import { Outlet } from "react-router-dom";
 
 export default function App() {
   //Área declarativa
@@ -11,7 +10,7 @@ export default function App() {
       {/* Área imperativa */}
 
       <Cabecalho />
-      <Conteudo viteLogoProps={viteLogo} viteLogoAlt={viteLogoAlt}/>
+        <Outlet/>
       <Rodape />
     </>
   );
