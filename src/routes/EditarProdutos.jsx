@@ -1,20 +1,18 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { ListaProdutos } from '../components/ListaProdutos';
-
+ 
 export default function EditarProdutos() {
   document.title = "EDITAR PRODUTO";
 
   const navigate = useNavigate();
-
   const { id } = useParams();
-
   const produtoRecuperado = ListaProdutos.filter((produto) => produto.id == id)[0]
-
   const [produto, setProduto] = useState({
     id: produtoRecuperado.id,
     nome: produtoRecuperado.nome,
     desc: produtoRecuperado.desc,
+    img: produtoRecuperado.img,
     preco: produtoRecuperado.preco,
   })
   

@@ -52,10 +52,6 @@ export default function Produtos() {
         </tfoot>
       </table>
 
-            <div>
-              <ModalData statusModal={status.open} idProduto={status.id}/>
-            </div>
-
     </>
   );
 }

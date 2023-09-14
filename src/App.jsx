@@ -8,7 +8,7 @@ export default function App() {
   return (
     <>
       {/* Área imperativa */}
-      <div className="">
+      <div className="container">
       <Cabecalho />
         <Outlet/>
       <Rodape />
