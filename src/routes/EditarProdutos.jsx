@@ -1,31 +1,73 @@
-import { useParams } from "react-router-dom";
-import { ListaProdutos } from "../components/ListaProdutos";
+import { useState } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
+import { ListaProdutos } from '../components/ListaProdutos';
 
 export default function EditarProdutos() {
-  //Recuperando o id que chega no request através do PATH.
-  //Vamos urtilizar o Hook useParams().
+  document.title = "EDITAR PRODUTO";
 
-  const {id} = useParams();
+  const navigate = useNavigate();
 
-  const produtoRecuperado = ListaProdutos.filter((produto) => {
-     if(produto.id == id){
-        return produto;
-     }
+  const { id } = useParams();
 
-     
-  });
+  const produtoRecuperado = ListaProdutos.filter((produto) => produto.id == id)[0]
 
-  const objProdutoRecuperado = produtoRecuperado[0];
+  const [produto, setProduto] = useState({
+    id: produtoRecuperado.id,
+    nome: produtoRecuperado.nome,
+    desc: produtoRecuperado.desc,
+    preco: produtoRecuperado.preco,
+  })
+  
+  const handleChange = (e)=>{
+    //Destructuring
+    const {name,value} = e.target;
+    //Populando o state produto com as propriedades dos inputs que estão sendo ativados, utilizando SPREAD.
+    setProduto({...produto,[name]:value});
+  }
 
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    let indice;
+    //Recuperando o índice do produto alterado com forEach.
+    // ListaProdutos.forEach((item,index)=>{
+    //   if(item === produto){
+    //     indice = index;
+    //   }
+    // });
 
+    //Ou utilizando o método indexOf
+    indice = ListaProdutos.findIndex(item => item.id == produto.id);
+
+    //Alterando o produto na lista com o método splice()
+    ListaProdutos.splice(indice,1,produto);
+
+    //Redirecionando o usuáio para a página de produtos!
+    navigate('/produtos');
+  }
   return (
     <>
-      <h1>EditarProdutos</h1>
-      <h2>PRODUTO</h2>
-      <p>NOME : - {objProdutoRecuperado.nome}</p>
-      <p>DESCRIÇÃO : - {objProdutoRecuperado.desc}</p>
-      <p>PREÇO : - {objProdutoRecuperado.preco}</p>
-      
+        <div>
+          <form onSubmit={handleSubmit}>
+            <fieldset>
+              <legend>Produto Selecionado</legend>
+              <div>
+                <label htmlFor="idNome">Nome</label>
+                <input type="text" name="nome" id="idNome" value={produto.nome} onChange={handleChange}/>
+              </div>
+              <div>
+                <label htmlFor="idDesc">Descrição</label>
+                <input type="text" name="desc" id="idDesc" value={produto.desc} onChange={handleChange}/>
+              </div>
+              <div>
+                <label htmlFor="idPreco">Preço</label>
+                <input type="text" name="preco" id="idPreco" value={produto.preco} onChange={handleChange}/>
+              </div>
+              <div>
+                <button>EDITAR</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
     </>
   );
 }
