@@ -9,6 +9,8 @@ import Produtos from './routes/Produtos.jsx';
 import Erro from './routes/Erro.jsx';
 import EditarProdutos from './routes/EditarProdutos.jsx';
 import ExcluirProdutos from './routes/ExcluirProdutos.jsx'
+import AdicionarProduto from './routes/AdicionarProduto.jsx';
+
 
 const router = createBrowserRouter(
   [
@@ -19,6 +21,7 @@ const router = createBrowserRouter(
       {path : "/produtos" , element : <Produtos/>},
       {path: "/excluir/produtos/:id", element: <ExcluirProdutos/>},
       {path : "/editar/produtos/:id" , element : <EditarProdutos/>},
+      {path: "/adicionar/produto", element: <AdicionarProduto/>}
     ]}
   ]
 );
