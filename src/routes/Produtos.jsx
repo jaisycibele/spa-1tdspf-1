@@ -5,6 +5,7 @@ import {RiDeleteBin2Fill as DelObj} from "react-icons/ri";
 import estilos from "./Produtos.module.css";
 import {useState} from "react";
 
+
 export default function Produtos() {
 
  const [status, setStatus] = useState({
@@ -19,7 +20,6 @@ export default function Produtos() {
   return (
     <>
       <h1>Produtos Informáticos - FIAPO</h1>
-
       <table className={estilos.tblEstilo}>
         <thead>
           <tr>
@@ -51,6 +51,9 @@ export default function Produtos() {
           </tr>
         </tfoot>
       </table>
+      <div className={estilos.buttonAdd}>
+        <Link to="/adicionar/produto">Adicionar Produto</Link>
+      </div>
 
     </>
   );
