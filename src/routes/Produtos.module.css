@@ -47,8 +47,9 @@
 
         & img {
             display: block;
-            width: 30%;
-            margin: 0 auto;
+            width: 30vw;
+            height: 20vh;
+            margin: 20px 20px;
         }
 
 
