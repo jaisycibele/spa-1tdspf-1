@@ -40,7 +40,7 @@ export default function AdicionarProduto() {
       console.log('Lista de Produtos:', ListaProdutos); 
       navigate('/produtos');
     } else {
-      alert('Preencha todos os campos, incluindo a imagem, antes de adicionar o produto.');
+      alert('Preencha todos os campos.');
     }
   };
 
