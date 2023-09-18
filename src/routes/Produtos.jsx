@@ -19,7 +19,7 @@ export default function Produtos() {
   
   return (
     <>
-      <h1>Produtos Informáticos - FIAPO</h1>
+      <h1>Produtos Informáticos - FIAP</h1>
       <table className={estilos.tblEstilo}>
         <thead>
           <tr>
