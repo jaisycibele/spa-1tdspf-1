@@ -38,9 +38,10 @@ export default function EditarProdutos() {
 
     //Alterando o produto na lista com o método splice()
     ListaProdutos.splice(indice,1,produto);
-
+    console.log('Lista de Produtos:', ListaProdutos); 
     //Redirecionando o usuáio para a página de produtos!
     navigate('/produtos');
+    
   }
   return (
     <>

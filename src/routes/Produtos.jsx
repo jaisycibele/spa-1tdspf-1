@@ -54,7 +54,6 @@ export default function Produtos() {
       <div className={estilos.buttonAdd}>
         <Link to="/adicionar/produto">Adicionar Produto</Link>
       </div>
-
     </>
   );
 }
