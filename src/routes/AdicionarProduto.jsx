@@ -20,17 +20,6 @@ export default function AdicionarProduto() {
     setProduto({ ...produto, [name]: value });
   };
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        setProduto({ ...produto, img: e.target.result });
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (produto.nome && produto.desc && produto.preco && produto.img) {
@@ -40,7 +29,7 @@ export default function AdicionarProduto() {
       console.log('Lista de Produtos:', ListaProdutos); 
       navigate('/produtos');
     } else {
-      alert('Preencha todos os campos, incluindo a imagem, antes de adicionar o produto.');
+      alert('Preencha todos os campos.');
     }
   };
 
@@ -63,8 +52,8 @@ export default function AdicionarProduto() {
               <input type="text" name="preco" id="idPreco" value={produto.preco} onChange={handleChange} />
             </div>
             <div>
-              <label htmlFor="idImg">Imagem:</label>
-              <input type="file" accept="image/*" name="img" id="idImg" onChange={handleImageChange} />
+              <label htmlFor="idImg">URL da Imagem:</label>
+              <input type="text" name="img" id="idImg" value={produto.img} onChange={handleChange} />
             </div>
             <div>
               <button>ADICIONAR PRODUTO</button>
