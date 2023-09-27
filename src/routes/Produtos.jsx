@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { AiFillEdit as EditObj } from "react-icons/ai";
 import { RiDeleteBin2Fill as DelObj } from "react-icons/ri";
 import estilos from "./Produtos.module.css";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+
 
 export default function Produtos() {
   document.title = "Lista de Produtos";
@@ -18,7 +18,11 @@ fetch("http://localhost:5000/produtos", {
         "Content-Type": "application/json",
       },
     })
-      .then((response) => response.json())
+      .then((response) =>{
+        console.log("O status da requisição/request HTTP: " + response.status)
+
+      response.json()})
+    
       .then((data) => {
         setListaProdutosLocal(data);
       })
