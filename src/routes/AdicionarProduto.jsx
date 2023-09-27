@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ListaProdutos } from '../components/ListaProdutos';
 import styles from './AdicionarProduto.module.css';
