@@ -3,7 +3,7 @@ import { AiFillEdit as EditObj } from "react-icons/ai";
 import { RiDeleteBin2Fill as DelObj } from "react-icons/ri";
 import estilos from "./Produtos.module.css";
 import { useState, useEffect } from "react";
-
+import ModalInserir from "../components/ModalInserir/ModalInserir";
 
 export default function Produtos() {
   document.title = "Lista de Produtos";
@@ -18,20 +18,25 @@ fetch("http://localhost:5000/produtos", {
         "Content-Type": "application/json",
       },
     })
-      .then((response) =>{
-        console.log("O status da requisição/request HTTP: " + response.status)
-
-      response.json()})
-    
+      .then((response) => {
+        console.log("O Status da requisição/request HTTP : " + response.status);
+        return response.json()
+      })
       .then((data) => {
         setListaProdutosLocal(data);
       })
       .catch((err) => console.log(err));
   }, []);
 
+  const [open, setOpen] = useState(false);
+
   return (
     <>
       <h1>Produtos Informáticos - FIAPO</h1>
+
+      { open ? <ModalInserir open={open} setOpen={setOpen}/> : "" }
+
+      <button onClick={()=> setOpen(true)}>OPEN-MODAL</button>
 
       <table className={estilos.tblEstilo}>
         <thead>
