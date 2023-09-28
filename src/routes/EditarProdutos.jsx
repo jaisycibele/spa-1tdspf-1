@@ -38,10 +38,9 @@ export default function EditarProdutos() {
 
     //Alterando o produto na lista com o método splice()
     ListaProdutos.splice(indice,1,produto);
-    console.log('Lista de Produtos:', ListaProdutos); 
+
     //Redirecionando o usuáio para a página de produtos!
     navigate('/produtos');
-    
   }
   return (
     <>
@@ -50,20 +49,16 @@ export default function EditarProdutos() {
             <fieldset>
               <legend>Produto Selecionado</legend>
               <div>
-                <label htmlFor="idNome">Nome: </label>
+                <label htmlFor="idNome">Nome</label>
                 <input type="text" name="nome" id="idNome" value={produto.nome} onChange={handleChange}/>
               </div>
               <div>
-                <label htmlFor="idDesc">Descrição: </label>
+                <label htmlFor="idDesc">Descrição</label>
                 <input type="text" name="desc" id="idDesc" value={produto.desc} onChange={handleChange}/>
               </div>
               <div>
-                <label htmlFor="idPreco">Preço: </label>
+                <label htmlFor="idPreco">Preço</label>
                 <input type="text" name="preco" id="idPreco" value={produto.preco} onChange={handleChange}/>
-              </div>
-              <div>
-                <label htmlFor="idImg">Imagem: </label>
-                <input type="text" name="imagem" id="idImg" value={produto.img} onChange={handleChange}/>
               </div>
               <div>
                 <button>EDITAR</button>

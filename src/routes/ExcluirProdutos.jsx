@@ -20,7 +20,7 @@ export default function ExcluirProdutos() {
     ListaProdutos.splice(indice,1);
 
     alert("Produto excluído com SUCESSO!");
-    console.log('Lista de Produtos:', ListaProdutos); 
+
     //Redirecionando o usuáio para a página de produtos!
     navigate('/produtos');
   }
