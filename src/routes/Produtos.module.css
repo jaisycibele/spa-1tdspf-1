@@ -1,3 +1,4 @@
+
 /* .tblEstilo{
     border-collapse: collapse;
     border: 2px solid #ccc;
@@ -21,67 +22,42 @@
 
 } */
 
-
-
-.tblEstilo {
+.tblEstilo{
     border-collapse: collapse;
     border: 2px solid #ccc;
     margin: 0 auto;
 
-    & th {
-        background-color: #ffe4c4;
-        border: 2px solid #cf5555;
+    & th{
+        background-color:#ffe4c4 ;
+        border:2px solid #cf5555;
         text-align: center;
     }
 
-    & td {
-        border: 2px solid #cf5555;
+    & td{
+        border:2px solid #cf5555;
+        
+            &:first-child{
+                text-align: center;
+            }
 
-        &:first-child {
-            text-align: center;
-        }
+            &:last-child{
+                text-align: center;
+            }
 
-        &:last-child {
-            text-align: center;
-        }
-
-        & img {
-            display: block;
-            margin: 20px 20px;
-        }
-
+            & img{
+                display: block;
+                width: 30%;
+                margin: 0 auto;
+            }
 
     }
 
-    & tr {
+    & tr{
         background-color: #ccc;
-
-        &:hover {
-            background-color: #b0acac;
+        &:hover{
+            background-color:#b0acac ;
         }
-
+    
     }
 
-}
-
-.buttonAdd {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.buttonAdd a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #cf5555;
-    color: #fff;
-    text-decoration: none;
-    border: 2px solid #cf5554;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.buttonAdd a:hover {
-    background-color: #e57e7e;
-    color: #fff;
 }

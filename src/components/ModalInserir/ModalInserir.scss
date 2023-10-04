@@ -1,13 +1,12 @@
-//Criando vairaveis no SASS:
 
-$bgColor: #ff0000;
-$txtColor: #fff;
-$displayView: block;
+//Criando variáveis no SASS:
+$bgColor:#ff0000;
+$txtColor:#fff;
+$displayView:block;
 $bordaArredondada:5px;
-
 //Criando um agrupando de estilos, chamamos de MIXING:
-@mixin estiloPadraoForm($tamanhoFonte, $familiaFonte, $corFonte){
-    
+@mixin estiloPadraoForm($tamanhoFonte,$familiaFonte,$corFonte){
+
     form{
         font-family: $familiaFonte;
         font-size: $tamanhoFonte;
@@ -21,10 +20,12 @@ $bordaArredondada:5px;
         input{
             display: $displayView;
             border-radius: $bordaArredondada;
-
         }
     }
 }
+
+
+
 $estiloDaFonte: Arial, Helvetica, sans-serif;
 
 .formGroup{
@@ -61,7 +62,7 @@ $estiloDaFonte: Arial, Helvetica, sans-serif;
 
 
     }
-
+    
     input{
         border: 0 solid transparent;
         width: 68%;
@@ -79,7 +80,7 @@ $estiloDaFonte: Arial, Helvetica, sans-serif;
         color: $txtColor;
         margin: 0 auto;
         width: 70%;
-
+        
     }
 
     button{
