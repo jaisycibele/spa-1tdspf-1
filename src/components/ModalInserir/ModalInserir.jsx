@@ -31,17 +31,39 @@ export default function ModalInserir(props) {
     img:""
   });
 
-  
+    // setProduto({...produto,["nome"]:"jose"})
 
+  const handleChange = (e) =>{
+    const {name,value} = e.target;
+    setProduto({...produto,[name]:value});
+  }
 
-  
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+
+    fetch("http://localhost:5000/produtos",{
+      method: "POST",
+      headers:{
+        "Content-Type":"application/json"
+      },
+      body: JSON.stringify(produto)
+    })
+    .then((response)=>response.json())
+    .then((response)=> console.log(response))
+    .catch(error=> console.log(error));
+    
+    props.setOpen(false);
+    window.location = "/produtos";
+    
+  }
+
   if (props.open) {
     return (
       <div className={styles.container}>
         <h1>CADASTRO DE PRODUTOS</h1>
 
         <div className="formGroup">
-          <form>
+          <form onSubmit={handleSubmit}>
             <fieldset>
               <span className="btnClose" onClick={() => props.setOpen(false)}>
                 X
@@ -54,6 +76,7 @@ export default function ModalInserir(props) {
                   name="nome"
                   id="idNome"
                   placeholder="Digite o nome do produto."
+                  value={produto.nome} onChange={handleChange}
                 />
               </div>
               <div>
@@ -63,6 +86,7 @@ export default function ModalInserir(props) {
                   name="desc"
                   id="idDesc"
                   placeholder="Digite a descrição do produto."
+                  value={produto.desc} onChange={handleChange}
                 />
               </div>
               <div>
@@ -72,6 +96,7 @@ export default function ModalInserir(props) {
                   name="preco"
                   id="idPreco"
                   placeholder="Digite o valor do produto."
+                  value={produto.preco} onChange={handleChange}
                 />
               </div>
               <div>
@@ -81,6 +106,7 @@ export default function ModalInserir(props) {
                   name="img"
                   id="idImg"
                   placeholder="Digite a url da imagem do produto."
+                  value={produto.img} onChange={handleChange}
                 />
               </div>
               <div>
