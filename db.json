@@ -32,7 +32,7 @@
       "id": 5,
       "nome": "Cadeira",
       "desc": "Cadeira Gamer DxRacer",
-      "preco": 2800,
+      "preco": "2323",
       "img": "https://picsum.photos/200/300"
     },
     {
@@ -57,11 +57,18 @@
       "id": 8
     },
     {
-      "nome": "Cama",
-      "desc": "Cadeira Gamer",
-      "preco": "2000",
-      "img": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.techtudo.com.br%2Flistas%2F2023%2F06%2Fdall-e-2-e-mais-8-sites-para-criar-imagem-com-inteligencia-artificial-edsoftwares.ghtml&psig=AOvVaw0-hbV8A_P4x6pVhKGcbhNv&ust=1695389118775000&source=images&cd=vfe&opi=89978449&ved=0CBAQjRxqFwoTCLjb8-_mu4EDFQAAAAAdAAAAABAE",
+      "nome": "Cama box",
+      "desc": "cama casal",
+      "preco": "7000",
+      "img": "https://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png",
       "id": 9
+    },
+    {
+      "nome": "Cama",
+      "desc": "32sdad",
+      "preco": "100000000000000",
+      "img": "https://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png",
+      "id": 10
     }
   ]
 }
