@@ -1,24 +1,10 @@
 {
   "produtos": [
     {
-      "id": 1,
-      "nome": "Teclado",
-      "desc": "Mecânico",
-      "preco": 150,
-      "img": "https://picsum.photos/200/300"
-    },
-    {
       "id": 2,
       "nome": "Mouse",
       "desc": "Gamer",
       "preco": 120,
-      "img": "https://picsum.photos/200/300"
-    },
-    {
-      "id": 3,
-      "nome": "Headset",
-      "desc": "8D",
-      "preco": 550,
       "img": "https://picsum.photos/200/300"
     },
     {
@@ -29,46 +15,11 @@
       "img": "https://picsum.photos/200/300"
     },
     {
-      "id": 5,
-      "nome": "Cadeira",
-      "desc": "Cadeira Gamer DxRacer",
-      "preco": "2323",
-      "img": "https://picsum.photos/200/300"
-    },
-    {
-      "nome": "Webcam",
-      "desc": "360º",
-      "preco": "348",
-      "img": "https://http2.mlstatic.com/D_NQ_NP_2X_623929-MLA52223384796_102022-F.webp",
-      "id": 6
-    },
-    {
       "nome": "Controle Remoto",
       "desc": "Universal - Samsung",
       "preco": "120",
       "img": "https://i1.wp.com/miamioutletimportados.com.br/wp-content/uploads/2018/09/Controle-Remoto-Universal-Urc-Mx-450.jpg",
       "id": 7
-    },
-    {
-      "nome": "Cubo Mágico",
-      "desc": "Metálico",
-      "preco": "120",
-      "img": "https://i0.wp.com/cubizzperu.com/wp-content/uploads/2023/06/61qv-kxse8L.jpg",
-      "id": 8
-    },
-    {
-      "nome": "Cama box",
-      "desc": "cama casal",
-      "preco": "7000",
-      "img": "https://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png",
-      "id": 9
-    },
-    {
-      "nome": "Cama",
-      "desc": "32sdad",
-      "preco": "100000000000000",
-      "img": "https://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png",
-      "id": 10
     }
   ]
 }
