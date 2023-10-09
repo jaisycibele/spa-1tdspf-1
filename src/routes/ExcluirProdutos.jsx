@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import style from './ExcluirProdutos.module.css'
-import './ExcluirProduto.scss'
 
 export default function ExcluirProdutos() {
   document.title = 'EXCLUIR PRODUTO';
@@ -17,7 +16,6 @@ export default function ExcluirProdutos() {
   });
 
   useEffect(() => {
-    // Carregue os detalhes do produto pelo ID
     fetch(`http://localhost:5000/produtos/${id}`, {
       method: 'GET',
       headers: {
@@ -35,12 +33,11 @@ export default function ExcluirProdutos() {
       })
       .catch((error) => {
         console.log(error);
-        navigate('/produtos'); // Redirecionar em caso de erro
+        navigate('/produtos'); 
       });
   }, [id, navigate]);
 
   const handleDelete = () => {
-    // Enviar solicitação DELETE para excluir o produto
     fetch(`http://localhost:5000/produtos/${id}`, {
       method: 'DELETE',
       headers: {
@@ -51,7 +48,6 @@ export default function ExcluirProdutos() {
         if (!response.ok) {
           throw new Error('Ocorreu um erro ao excluir o produto');
         }
-        // Produto excluído com sucesso
         alert('Produto excluído com sucesso!');
         navigate('/produtos');
       })
