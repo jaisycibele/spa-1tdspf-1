@@ -1,6 +1,7 @@
 
 //Criando variáveis no SASS:
 $bgColor:#ff0000;
+$bgGreen: #008000;
 $txtColor:#fff;
 $displayView:block;
 $bordaArredondada:5px;
@@ -57,7 +58,7 @@ $estiloDaFonte: Arial, Helvetica, sans-serif;
         }
 
         &:active{
-            background-color: $bgColor;
+            background-color: $bgGreen;
         }
 
 
