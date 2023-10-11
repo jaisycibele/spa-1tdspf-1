@@ -1,6 +1,13 @@
 {
   "produtos": [
     {
+      "id": 1,
+      "nome": "Teclado",
+      "desc": "Mecânico",
+      "preco": 150,
+      "img": "https://picsum.photos/200/300"
+    },
+    {
       "id": 2,
       "nome": "Mouse",
       "desc": "Gamer",
@@ -34,6 +41,13 @@
       "preco": "348",
       "img": "https://http2.mlstatic.com/D_NQ_NP_2X_623929-MLA52223384796_102022-F.webp",
       "id": 6
+    },
+    {
+      "nome": "Controle Remoto",
+      "desc": "Universal - Samsung",
+      "preco": "120",
+      "img": "https://i1.wp.com/miamioutletimportados.com.br/wp-content/uploads/2018/09/Controle-Remoto-Universal-Urc-Mx-450.jpg",
+      "id": 7
     },
     {
       "nome": "Cubo Mágico",
