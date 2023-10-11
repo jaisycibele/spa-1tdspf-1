@@ -45,7 +45,6 @@ export default function EditarProdutos() {
     })
       .then((response) => response.json())
       .then(() => {
-        // Redirecionar após a edição ser concluída
         navigate('/produtos');
       })
       .catch((error) => console.log(error));
