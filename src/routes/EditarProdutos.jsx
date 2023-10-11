@@ -36,6 +36,7 @@ export default function EditarProdutos() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+
     fetch(`http://localhost:5000/produtos/${id}`, {
       method: 'PUT',
       headers: {
@@ -48,10 +49,22 @@ export default function EditarProdutos() {
         navigate('/produtos');
       })
       .catch((error) => console.log(error));
+
+    //Ou utilizando o método indexOf
+    indice = ListaProdutos.findIndex(item => item.id == produto.id);
+
+    //Alterando o produto na lista com o método splice()
+    ListaProdutos.splice(indice,1,produto);
+    console.log('Lista de Produtos: ', ListaProdutos); 
+    //Redirecionando o usuáio para a página de produtos!
+    navigate('/produtos');
+    
+
   }
 
   return (
     <>
+
       <div>
         <form onSubmit={handleSubmit}>
           <fieldset>
@@ -74,6 +87,33 @@ export default function EditarProdutos() {
           </fieldset>
         </form>
       </div>
+        <div>
+          <form onSubmit={handleSubmit}>
+            <fieldset>
+              <legend>Produto Selecionado</legend>
+              <div>
+                <label htmlFor="idNome">Nome: </label>
+                <input type="text" name="nome" id="idNome" value={produto.nome} onChange={handleChange}/>
+              </div>
+              <div>
+                <label htmlFor="idDesc">Descrição: </label>
+                <input type="text" name="desc" id="idDesc" value={produto.desc} onChange={handleChange}/>
+              </div>
+              <div>
+                <label htmlFor="idPreco">Preço: </label>
+                <input type="text" name="preco" id="idPreco" value={produto.preco} onChange={handleChange}/>
+              </div>
+              <div>
+                <label htmlFor="idImg">Imagem: </label>
+                <input type="text" name="imagem" id="idImg" value={produto.img} onChange={handleChange}/>
+              </div>
+              <div>
+                <button>EDITAR</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+
     </>
   );
 }
